@@ -49,7 +49,10 @@ So that I can stay engaged \
 [LLM-03] The guided learning software will need pre-written lesson plans so that LLMs will have a baseline to work off, instead of the pre-existing weights attributed to them. The software itself will have lesson authors \
 [LLM-04] The guided learning software will have strong guardrails to prevent students being able to let it go off topic \
 [LLM-05] The student LLM guide will get current lesson plan and student history to be able to answer their questions on their level \
-[LLM-06] Any question an LLM generates for a quiz needs to be validated against the lesson plan's infomation. 
+[LLM-06] Any question an LLM generates for a quiz needs to be validated against the lesson plan's infomation. \
+[LLM-07] Amount of LLM requests need to be rate limited to not overload backend systems \
+[LLM-08] Any LLM requests need to have a timeout so it does not stall in an infinite loops \
+[LLM-09] Chatbox will have simple filter over students cannot send abusive language to the LLM
 
 [INST-01] As an Instructor \
 I want to have student performance reports \
