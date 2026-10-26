@@ -61,6 +61,15 @@ So that I can create well suited instruction for students. \
 I want to be able to tune the LLM that generates student performance reports \
 So I can make it fit whatever criteria that works for certain subjects 
 
+[CONTENT-01] As a content-writer \
+I want a rich editor to be able to have text styles, charts, images, video, and code \
+So I can fully realize the lesson plan
+
+[CONTENT-02] As a teacher \
+I want to be able to give my students my own notes on the pre-written plans \
+So I can expand or clarify certain ideas for my class
+
+
 # Acceptance Criteria
 [Gherkin] Feature: Student Chatbot Interaction \
 		Scenario: Student asks a question to chatbot \
