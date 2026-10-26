@@ -78,12 +78,12 @@ So I can expand or clarify certain ideas for my class
 		And students’ presses the send \
 		Then student’s question is sent to LLM and then returned to the chatbox 
 
-Student Message Chatbox Acceptance: \
-1. Does not have profane or violent speech \
-2. Is on topic of current subject \
+Student Message Chatbox Acceptance: 
+1. Does not have profane or violent speech 
+2. Is on topic of current subject 
 3. Student is not over ratelimit for messages
 
-Valid LLM Generate Quiz Question: \
+Valid LLM Generate Quiz Question: 
 1. Infomation towards answers can be retrieved from lesson content
 2. Has valid answer(s)
 3. Stylized like other questions in quizes. 
