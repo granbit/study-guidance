@@ -69,6 +69,23 @@ So I can fully realize the lesson plan
 I want to be able to give my students my own notes on the pre-written plans \
 So I can expand or clarify certain ideas for my class
 
+# Non-Functional Requirements
+
+[NFR-SAFE-01] As an adminstrator \
+the sofware must enforce content moderation of student input and LLM outputs \
+to prevent off-topic drift, hallucinination or abusive language
+
+[NFR-SAFE-02] As an adminstrator \
+the sofware must have roles based permissions \
+to prevent users accessing infomations or functionality they should not
+
+[NFR-SEC-01] As an adminstrator \
+chat logs, student records, and performace metrics must be encrypted in transit and at rest \
+to comply with educational data privacy regulations
+
+[NFR-PERF-01] As a student \
+chat logs and feedback must replay with 5 to 7 seconds \
+so it does not waste my time
 
 # Acceptance Criteria
 [Gherkin] Feature: Student Chatbot Interaction \
