@@ -1,6 +1,6 @@
 ## 1. Overview
 
-This system is a self-hostable digital learning platform built with Node.js and HTML/CSS/JS, designed to support students with personalized lessons, quizzes, and LLM-powered feedback while providing instructors with performance reports and content management tools. The architecture relies on a monolithic Node.js backend connected to a PostgreSQL database with encrypted storage, multi-LLM failover routing, and server-delivered static layouts optimized for low-powered devices and offline capabilities.
+This system is a self-hostable digital learning platform built with Node.js and HTML/CSS/JS, designed to support students with personalized lessons, quizzes, and LLM-powered feedback while providing instructors with performance reports and content management tools. The architecture relies on a monolithic Node.js backend connected to any choice database with encrypted storage, multi-LLM failover routing, and server-delivered static layouts optimized for low-powered devices and offline capabilities.
 
 ---
 
@@ -38,12 +38,13 @@ This system is a self-hostable digital learning platform built with Node.js and 
 | **Software suite designed for self-hosting by educational institutions or instructors.** | Key design decision. |
 | **Open-source core architecture relying on modular integration points for proprietary modules.** | Key design decision. |
 | **Configurable institutional login supporting OAuth, username/password, optional MFA, and mandatory physical passkeys for administrators/content writers.** | Key design decision. |
-| **PostgreSQL database backend with encryption for stored data.** | Backend requirement (`Backend will be servered stored with PostgresSQL with encryption`). |
+| **Any choice (default: Postgres, Option: SQLite ) database backend with encryption for stored data.** | Backend requirement (`Backend supported by database with encryption`). |
+| **Database will be used for written content stores. Writeups, reviews, quizes** | Key design decision |
 | **Cloud object storage with support for local server disk storage for media files.** | Key design decision. |
 | **Built-in multi-LLM failover tuned for cost, accuracy, and administrative requirements.** | Key design decision and requirement `[LLM-02]`. |
 | **Safety layer implementing lightweight Node.js regex/heuristics with optional local/cloud LLM layers.** | Key design decision and requirements `[LLM-04]`, `[LLM-09]`, and `[NFR-SAFE-01]`. |
 | **Rate limiting for LLM requests to prevent user abuse and control costs, alongside content scraping rate limits.** | Key design decision and requirement `[LLM-07]`. |
-| **Node.js delivery of static pages for interface rendering on mobile and low-powered laptops, with offline file downloads.** | Key design decision and constraints. |
+| **Node.js delivery of static pages for interface rendering on mobile and low-powered laptops, with offline file downloads. Offline downloads are not synced** | Key design decision and constraints. |
 | **Role-based permissions enforced across all backend endpoints.** | Requirement `[NFR-SAFE-02]`. |
 | **Encryption of chat logs, student records, and performance metrics in transit and at rest.** | Requirement `[NFR-SEC-01]`. |
 
@@ -53,7 +54,6 @@ This system is a self-hostable digital learning platform built with Node.js and 
 
 * **Constraints:** Built using Node.js and HTML/CSS/JS as a browser-based application optimized for low-powered laptops and strong mobile support, utilizing a multi-LLM structure with self-hosted failover options.
 * **Limits:** This design does not handle real-time multi-user collaborative editing out-of-the-box, nor does it natively support edge-computing worker distributions for massive high-concurrency enterprise scale without scaling the Node.js server instances. If user requirements expanded to millions of concurrent active chat sessions or real-time video streaming classrooms, the monolithic Node.js backend would need to transition into a distributed microservices architecture with dedicated message queues and distributed caching.
-
 ---
 
 ## 6. Out of scope
@@ -64,6 +64,3 @@ This system is a self-hostable digital learning platform built with Node.js and 
 
 ---
 
-## Spec issues
-
-* The spec states that offline content reading and quizzes may be allowed, but does not define how synchronization conflicts are resolved when a student reconnects to the server after completing offline quizzes or viewing dynamic LLM-generated material.
