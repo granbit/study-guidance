@@ -71,6 +71,14 @@ So I can expand or clarify certain ideas for my class
 
 # Non-Functional Requirements
 
+[NFR-OPEN-01] As an eductional institution adminstrator \
+the software should be open-source and self-hostable \
+so I can tune these systems for my needs and not be restricted to the software provider's cloud
+
+[NFR-OPEN-02] As an adminstrator \
+the software should not rely on proprietary software \
+so it lowers the cost of hosting the software and keeps the software transparent
+
 [NFR-SAFE-01] As an adminstrator \
 the sofware must enforce content moderation of student input and LLM outputs \
 to prevent off-topic drift, hallucinination or abusive language
@@ -86,6 +94,11 @@ to comply with educational data privacy regulations
 [NFR-PERF-01] As a student \
 chat logs and feedback must replay with 5 to 7 seconds \
 so it does not waste my time
+
+[NFR-PERF-02] As a student \
+the software should consider to mobile device and low-powered devices \
+so I can use the software without much expense
+
 
 # Acceptance Criteria
 [Gherkin] Feature: Student Chatbot Interaction \
