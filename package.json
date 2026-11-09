@@ -1,0 +1,13 @@
+{
+  "name": "digital-learning-system",
+  "version": "1.0.0",
+  "description": "Runnable skeleton for Digital Learning and Teaching System",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
