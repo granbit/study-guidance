@@ -5,9 +5,15 @@
   "main": "src/server.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "test": "jest",
+    "test-clean": "--no-colors --noStackTrace"
   },
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
   }
 }

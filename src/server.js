@@ -67,7 +67,14 @@ app.post('/api/lessons/:lessonId/notes', notImplementedHandler('ContentModule.ad
 // [NFR-OPEN-01], [NFR-PERF-02] Offline file download sync
 app.get('/api/content/offline-sync', notImplementedHandler('ContentModule.syncOfflineFiles'));
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Digital Learning Platform skeleton running on port ${PORT}`);
-});
+// [NFR-PERF-02] Static layout interface delivery
+app.get('/', notImplementedHandler('InterfaceModule.renderStaticPage'));
+
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Digital Learning Platform skeleton running on port ${PORT}`);
+  });
+}
+
+module.exports = app;
