@@ -26,6 +26,8 @@ Support teachers with data to be able to narrow down problems with students
 
 # Functional Requirements
 
+[AUTH-01] The system shall authenticate users (students and instructors) via secure institutional credentials, issuing cryptographically signed JSON Web Tokens to manage stateless sessions and enforce role-based access control across protected API routes.
+
 [QUIZ-01] As a Student \
 I want to solve practice problems \
 So that I can study 
