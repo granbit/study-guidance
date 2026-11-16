@@ -1,5 +1,5 @@
 const express = require('express');
-const { AuthModule } = require('./modules/auth');
+const { AuthModule, InvalidCredentialsError, AuthenticationFailedError } = require('./modules/auth');
 const { ContentModule } = require('./modules/content');
 const { QuizModule } = require('./modules/quiz');
 const { LLMGatewayModule } = require('./modules/llmGateway');
@@ -26,7 +26,21 @@ const notImplementedHandler = (moduleMethodName) => async (req, res) => {
 };
 
 // [NFR-SAFE-02] Auth Route
-app.post('/api/auth/login', notImplementedHandler('AuthModule.authenticateUser'));
+app.post('/api/auth/login', async (req, res) => {
+  try {
+    const { username, password, oauthToken } = req.body || {};
+    const result = await authModule.authenticateUser({ username, password, oauthToken });
+    res.status(200).json(result);
+  } catch (err) {
+    if (err instanceof InvalidCredentialsError || err instanceof AuthenticationFailedError) {
+      return res.status(401).json({
+        error: 'invalid_credentials',
+        message: err.message
+      });
+    }
+    res.status(500).json({ error: 'internal_server_error', message: err.message });
+  }
+});
 
 // [QUIZ-01], [QUIZ-02] Solve practice problems & problem types
 app.get('/api/quizzes/problems', notImplementedHandler('QuizModule.getPracticeProblems'));

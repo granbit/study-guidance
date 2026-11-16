@@ -99,7 +99,7 @@ Tests:       20 failed, 20 total
 - **Skeleton to fill in**: `AuthModule.authenticateUser(credentials)` in `src/modules/auth.js` and route `POST /api/auth/login` in `src/server.js`.
 - **Depends on**: None.
 - **Done when**: `test_AUTH01: rejection for invalid credentials and control` passes and no previously passing test fails.
-- **Status**: not started.
+- **Status**: completed.
 
 ### Slice 3: Lesson Plan Content Creation
 - **Name**: Lesson Plan Content Creation
