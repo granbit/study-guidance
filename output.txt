@@ -1,0 +1,148 @@
+npm notice run digital-learning-system@1.0.0 test
+npm notice run jest --no-colors --verbose=false --no-colors --noStackTrace
+FAIL tests/acceptance.test.js
+  ● Acceptance Criteria Tests › GHERKIN-01: Student Chatbot Interaction › test_GHERKIN01: outside payload limit rejection and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › CHATBOX-01: Student Message Chatbox Acceptance: Does not have profane or violent speech › test_CHATBOX01: rejection for profane/violent input and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 501
+
+  ● Acceptance Criteria Tests › CHATBOX-02: Student Message Chatbox Acceptance: Is on topic of current subject › test_CHATBOX02: rejection for off-topic question and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › CHATBOX-03: Student Message Chatbox Acceptance: Student is not over ratelimit for messages › test_CHATBOX03: rejection when exceeding rate limit and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 429
+    Received: 501
+
+  ● Acceptance Criteria Tests › QUIZVAL-01: Valid LLM Generate Quiz Question: Information towards answers can be retrieved from lesson content › test_QUIZVAL01: rejection for out-of-lesson factual claims and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › QUIZVAL-02: Valid LLM Generate Quiz Question: Has valid answer(s) › test_QUIZVAL02: rejection when lacking valid answer key and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › QUIZVAL-03: Valid LLM Generate Quiz Question: Stylized like other questions in quizes › test_QUIZVAL03: rejection for divergent styling and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › QUIZ-01-AC: [QUIZ-01] Solve practice problems to study › test_QUIZ01_AC: rejection for excessive page size and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › QUIZ-02-AC: [QUIZ-02] Support multiple-choice, short-answer, and fill-in-blank problem types › test_QUIZ02_AC: rejection for unknown question type and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › QUIZ-04-AC: [QUIZ-04] Immediate grading upon finish to identify mistakes › test_QUIZ04_AC: rejection for empty submission and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › LLM-02-AC: [LLM-02] LLM access for student feedback and dynamic question generation › test_LLM02_AC: dynamic generation on exhausted topic and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › LLM-03-AC: [LLM-03] Pre-written lesson plans as a baseline for LLMs created by authors › test_LLM03_AC: rejection for excessive lesson content length and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › LLM-08-AC: [LLM-08] LLM request timeout to prevent infinite loops › test_LLM08_AC: timeout rejection and fast control response
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 504
+    Received: 501
+
+  ● Acceptance Criteria Tests › INST-01-AC: [INST-01] Student performance reports for targeted instruction › test_INST01_AC: rejection for invalid reporting window and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › INST-02-AC: [INST-02] Tune LLM generation parameters for performance reports by subject › test_INST02_AC: rejection for empty criteria and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › CONTENT-01-AC: [CONTENT-01] Rich editor supporting text styles, charts, images, video, and code › test_CONTENT01_AC: rejection for unauthorized executable payload and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 400
+    Received: 501
+
+  ● Acceptance Criteria Tests › CONTENT-02-AC: [CONTENT-02] Teacher custom notes attached to pre-written plans › test_CONTENT02_AC: rejection for non-existent lesson and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 404
+    Received: 501
+
+  ● Acceptance Criteria Tests › NFR-SEC-01-AC: [NFR-SEC-01] Encryption of chat logs, student records, and metrics in transit and at rest › test_NFR_SEC01_AC: rejection for unencrypted plain HTTP transport and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 403
+    Received: 501
+
+  ● Acceptance Criteria Tests › NFR-PERF-02-AC: [NFR-PERF-02] Optimization for mobile and low-powered devices › test_NFR_PERF02_AC: static layout asset delivery and size check
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 501
+
+  ● Acceptance Criteria Tests › AUTH-01: [AUTH-01] User authentication via institutional credentials and signed JSON Web Tokens › test_AUTH01: rejection for invalid credentials and control
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 401
+    Received: 501
+
+Test Suites: 1 failed, 1 total
+Tests:       20 failed, 20 total
+Snapshots:   0 total
+Time:        0.979 s, estimated 1 s
+Ran all test suites.
