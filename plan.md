@@ -110,7 +110,7 @@ Tests:       20 failed, 20 total
 - **Skeleton to fill in**: `ContentModule.createLesson(lessonData)` in `src/modules/content.js` and route `POST /api/lessons` in `src/server.js`.
 - **Depends on**: None.
 - **Done when**: `test_CONTENT01_AC: rejection for unauthorized executable payload and control` passes and no previously passing test fails.
-- **Status**: not started.
+- **Status**: completed.
 
 ### Slice 4: Lesson Plan Storage Boundary Validation
 - **Name**: Lesson Plan Storage Boundary Validation
@@ -121,7 +121,7 @@ Tests:       20 failed, 20 total
 - **Skeleton to fill in**: `ContentModule.createLesson(lessonData)` in `src/modules/content.js` and route `POST /api/lessons` in `src/server.js`.
 - **Depends on**: Slice 3.
 - **Done when**: `test_LLM03_AC: rejection for excessive lesson content length and control` passes and no previously passing test fails.
-- **Status**: not started.
+- **Status**: completed.
 
 ### Slice 5: Teacher Custom Notes Attachment
 - **Name**: Teacher Custom Notes Attachment
@@ -132,7 +132,7 @@ Tests:       20 failed, 20 total
 - **Skeleton to fill in**: `ContentModule.addTeacherNote(lessonId, instructorId, noteContent)` in `src/modules/content.js` and route `POST /api/lessons/:lessonId/notes` in `src/server.js`.
 - **Depends on**: Slice 3.
 - **Done when**: `test_CONTENT02_AC: rejection for non-existent lesson and control` passes and no previously passing test fails.
-- **Status**: not started.
+- **Status**: completed.
 
 ### Slice 6: Chat Input Safety Moderation
 - **Name**: Chat Input Safety Moderation
