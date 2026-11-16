@@ -88,7 +88,7 @@ Tests:       20 failed, 20 total
 - **Skeleton to fill in**: `InterfaceModule.renderStaticPage(pageName, context)` in `src/modules/interface.js` and route `GET /` in `src/server.js`.
 - **Depends on**: None.
 - **Done when**: `test_NFR_PERF02_AC: static layout asset delivery and size check` passes and no previously passing test fails.
-- **Status**: not started.
+- **Status**: completed.
 
 ### Slice 2: User Authentication & JWT Issuance
 - **Name**: User Authentication & JWT Issuance

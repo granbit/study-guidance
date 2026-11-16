@@ -68,7 +68,15 @@ app.post('/api/lessons/:lessonId/notes', notImplementedHandler('ContentModule.ad
 app.get('/api/content/offline-sync', notImplementedHandler('ContentModule.syncOfflineFiles'));
 
 // [NFR-PERF-02] Static layout interface delivery
-app.get('/', notImplementedHandler('InterfaceModule.renderStaticPage'));
+app.get('/', async (req, res) => {
+  try {
+    const html = await interfaceModule.renderStaticPage('index');
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.status(200).send(html);
+  } catch (err) {
+    res.status(500).json({ error: "internal_server_error", message: err.message });
+  }
+});
 
 if (require.main === module) {
   const PORT = process.env.PORT || 3000;
